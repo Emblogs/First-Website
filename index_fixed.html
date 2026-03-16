@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Era of Grace Farms</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Josefin+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style_fixed.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <div class="head">
+      <img
+        class="logo-img"
+        src="./Assest/era-of-grace-farms-logo (1).svg"
+        alt="Era of Grace Farms Logo"
+      />
+      <nav>
+        <ul>
+          <li><a href="#hero" class="ani">Home</a></li>
+          <li><a href="#about" class="ani">About</a></li>
+          <li><a href="#services" class="ani">Services</a></li>
+          <li><a href="#testimonials" class="ani">Testimonials</a></li>
+          <!-- FIX: kept id="cta" for the button style, that's fine since it's unique -->
+          <li><a href="#contact" class="ani" id="cta">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero1" id="hero">
+      <!-- Slide 1 -->
+      <div class="ss slide1 active">
+        <div class="slide-content">
+          <span class="slide-tag">Welcome to Era of Grace Farms</span>
+          <h1 class="slide-title">
+            Raised with <em>Care,</em><br />Sold with Pride.
+          </h1>
+          <p class="slide-desc">
+            A family farm dedicated to raising healthy, quality pigs. Trusted by
+            families, restaurants, and markets across the region.
+          </p>
+          <a href="Signup.html" class="slide-btn">Get Started</a>
+          <img
+            src="./Assest/istockphoto-2212330716-612x612.jpg"
+            alt="Farm"
+            class="ima"
+          />
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="ss slide2">
+        <div class="slide-content">
+          <span class="slide-tag">What We Offer</span>
+          <h1 class="slide-title">
+            From Our Farm,<br /><em>To Your Table.</em>
+          </h1>
+          <p class="slide-desc">
+            Live pigs, pork supply, piglets, and breeding stock — all raised
+            naturally on open land with no artificial additives.
+          </p>
+          <a href="Signup.html" class="slide-btn">Get Started</a>
+          <img
+            src="./Assest/yoneken-LGnpbD_C2Ns-unsplash.jpg"
+            alt="Farm"
+            class="ima"
+          />
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="ss slide3">
+        <div class="slide-content">
+          <span class="slide-tag">Trusted by Many</span>
+          <h1 class="slide-title">Quality You Can<br /><em>Count On.</em></h1>
+          <p class="slide-desc">
+            500+ satisfied customers and counting. Whether you're a first-time
+            buyer or a bulk supplier — we've got you covered.
+          </p>
+          <a href="Signup.html" class="slide-btn">Get Started</a>
+          <img
+            src="./Assest/360_F_279167691_rzuugEECTglPAG9bVmDHlrXFU2fh9JMr.jpg"
+            alt="Farm"
+            class="ima"
+          />
+        </div>
+      </div>
+
+      <div class="progress-bar" id="progressBar"></div>
+
+      <div class="dots">
+        <div class="dot active" onclick="goToSlide(0)"></div>
+        <div class="dot" onclick="goToSlide(1)"></div>
+        <div class="dot" onclick="goToSlide(2)"></div>
+      </div>
+
+      <div class="arrow left" onclick="changeSlide(-1)">&#8592;</div>
+      <div class="arrow right" onclick="changeSlide(1)">&#8594;</div>
+    </div>
+
+    <!-- ABOUT -->
+    <!-- FIX: added class="about" so CSS grid applies correctly -->
+    <section id="about" class="about">
+      <!-- Left: image -->
+      <div class="lefti">
+        <img
+          class="about-img"
+          src="./Assest/outdoor-pig-farming-sunny-day-beautiful-sunny-day-herd-healthy-pigs-enjoys-fresh-air-feed-open-sided-barn-406835070.jpg"
+          alt="Era of Grace Farm"
+        />
+      </div>
+
+      <!-- Right: text — FIX: was r_si, now matches CSS -->
+      <div class="r_si">
+        <span class="abt_tag">Our Story</span>
+        <h2 class="about-title">
+          A Family Farm Built<br />on <em>Passion & Trust</em>
+        </h2>
+        <div class="gold-line"></div>
+        <p class="abt_story">
+          Era of Grace Farms was founded with one simple belief — that quality
+          starts with care. What began as a small family operation has grown
+          into one of the most trusted pig farms in the region. Every animal we
+          raise is treated with respect, fed naturally, and given the space to
+          thrive.
+        </p>
+        <p class="abt_story">
+          Whether you're a family looking for fresh pork, a restaurant needing
+          reliable supply, or a farmer seeking quality breeding stock — we are
+          here to serve you with integrity and consistency.
+        </p>
+
+        <!-- FIX: wrapped all float cards in a container + closed all divs properly -->
+        <div class="values-container">
+          <div class="float">
+            <div class="icon1">🌿</div>
+            <div class="value-text">
+              <h4>Naturally Raised</h4>
+              <p>
+                Our pigs are raised on open pastures with 100% natural feed — no
+                hormones, no shortcuts.
+              </p>
+            </div>
+          </div>
+          <div class="float">
+            <div class="icon1">✅</div>
+            <div class="value-text">
+              <h4>Quality Guaranteed</h4>
+              <p>
+                Every pig that leaves our farm is healthy, well-fed and meets
+                the highest standards.
+              </p>
+            </div>
+          </div>
+          <div class="float1">
+            <div class="icon1">🤝</div>
+            <div class="value-text">
+              <h4>Community Trusted</h4>
+              <p>
+                Built on long-term relationships with families, markets, and
+                restaurants across the region.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="services-header">
+        <span class="section-tag">What We Offer</span>
+        <h2 class="section-title">Our <em>Services</em></h2>
+        <div class="center-line"></div>
+        <p class="section-subtitle">
+          All services require a login to place and track orders. Click any
+          service to get started.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Piglet Sales -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C9 2 6 4 6 7c0 1.5.5 2.8 1.3 3.8C5.5 12 4 13.9 4 16c0 2.2 1.8 4 4 4h8c2.2 0 4-1.8 4-4 0-2.1-1.5-4-3.3-5.2C17.5 9.8 18 8.5 18 7c0-3-3-5-6-5z"
+              />
+              <circle cx="9.5" cy="7.5" r="1" />
+              <circle cx="14.5" cy="7.5" r="1" />
+              <path d="M9 16h6" />
+            </svg>
+          </div>
+          <span class="service-tag tag-paid">Paid</span>
+          <h3>Piglet Sales</h3>
+          <p>
+            Healthy weaned piglets ideal for farmers looking to start or expand
+            their own pig farming operation.
+          </p>
+          <a href="signup.html" class="service-btn">Order Now →</a>
+        </div>
+
+        <!-- Breeding Stock -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22V12" />
+              <path d="M12 12C12 7 7 3 3 5c0 4 3 7 9 7z" />
+              <path d="M12 12c0-5 5-9 9-7 0 4-3 7-9 7z" />
+              <path d="M3 19h18" />
+            </svg>
+          </div>
+          <span class="service-tag tag-paid">Paid</span>
+          <h3>Breeding Stock</h3>
+          <p>
+            High-quality boars and sows selected for superior genetics, health,
+            and productivity.
+          </p>
+          <a href="signup.html" class="service-btn">Order Now →</a>
+        </div>
+
+        <!-- Bulk Orders -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="7" width="20" height="14" rx="2" />
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+              <line x1="12" y1="12" x2="12" y2="16" />
+              <line x1="10" y1="14" x2="14" y2="14" />
+            </svg>
+          </div>
+          <span class="service-tag tag-paid">Paid</span>
+          <h3>Bulk Orders</h3>
+          <p>
+            Large-scale supply for markets and food processors. Competitive
+            pricing for volume orders.
+          </p>
+          <a href="signup.html" class="service-btn">Order Now →</a>
+        </div>
+
+        <!-- Farm Consultation -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+              />
+            </svg>
+          </div>
+          <span class="service-tag tag-paid">Paid</span>
+          <h3>Farm Consultation</h3>
+          <p>
+            Expert advice for new and existing farmers. Get guidance on breeds,
+            feeding, housing and more.
+          </p>
+          <a href="signup.html" class="service-btn">Book Now →</a>
+        </div>
+
+        <!-- Farm Tour -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M1 3h15v13H1z" />
+              <path d="M16 8l5 5-5 5V8z" />
+              <path d="M1 21h22" />
+              <path d="M7 16v5" />
+            </svg>
+          </div>
+          <span class="service-tag tag-paid">Paid</span>
+          <h3>Farm Tour</h3>
+          <p>
+            Experience the farm firsthand. Book a guided tour of Era of Grace
+            Farms for individuals or groups.
+          </p>
+          <a href="signup.html" class="service-btn">Book Now →</a>
+        </div>
+
+        <!-- Logistics -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="1" y="3" width="15" height="13" rx="1" />
+              <path d="M16 8h4l3 3v5h-7V8z" />
+              <circle cx="5.5" cy="18.5" r="2.5" />
+              <circle cx="18.5" cy="18.5" r="2.5" />
+            </svg>
+          </div>
+          <span class="service-tag tag-paid">Paid</span>
+          <h3>Logistics</h3>
+          <p>
+            We deliver your order straight to your location. Choose between our
+            delivery service or physical pickup.
+          </p>
+          <a href="signup.html" class="service-btn">Choose Option →</a>
+        </div>
+      </div>
+
+      <!-- Logistics Banner -->
+      <div class="logistics-banner">
+        <div class="logistics-left">
+          <div class="logistics-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="1" y="3" width="15" height="13" rx="1" />
+              <path d="M16 8h4l3 3v5h-7V8z" />
+              <circle cx="5.5" cy="18.5" r="2.5" />
+              <circle cx="18.5" cy="18.5" r="2.5" />
+            </svg>
+          </div>
+          <div class="logistics-text">
+            <h3>How Would You Like Your Order?</h3>
+            <p>
+              After placing your order, choose between our delivery service or
+              come pick it up yourself at the farm.
+            </p>
+          </div>
+        </div>
+        <div class="logistics-options">
+          <a href="signup.html" class="logistics-option">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            <span class="opt-label">Physical Pickup</span>
+            <span class="opt-desc">Come to the farm</span>
+          </a>
+          <a href="signup.html" class="logistics-option">
+            <svg viewBox="0 0 24 24">
+              <rect x="1" y="3" width="15" height="13" rx="1" />
+              <path d="M16 8h4l3 3v5h-7V8z" />
+              <circle cx="5.5" cy="18.5" r="2.5" />
+              <circle cx="18.5" cy="18.5" r="2.5" />
+            </svg>
+            <span class="opt-label">Delivery</span>
+            <span class="opt-desc">We come to you</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="services-cta">
+        <p>All orders require an account — sign up free to get started</p>
+        <div class="cta-btns">
+          <a href="signup.html" class="btn-gold">Create Account</a>
+          <a href="login.html" class="btn-outline-light">Log In</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <div class="testimonials-header">
+        <span class="section-tag">What People Say</span>
+        <h2 class="section-title" style="color: var(--green-dark)">
+          Trusted by <em style="color: var(--green)">Many</em>
+        </h2>
+        <div class="center-line"></div>
+      </div>
+
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+          </div>
+          <p class="testi-quote">
+            Era of Grace has been our go-to supplier for two years. The pigs are
+            always healthy and the service is absolutely outstanding.
+          </p>
+          <div class="testi-footer">
+            <div class="testi-avatar av-1">C</div>
+            <div>
+              <div class="testi-author-name">Chuka Okonkwo</div>
+              <div class="testi-author-role">Restaurant Owner</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+          </div>
+          <p class="testi-quote">
+            Bought piglets from them twice now. Very healthy stock and the team
+            was incredibly helpful throughout the entire process.
+          </p>
+          <div class="testi-footer">
+            <div class="testi-avatar av-2">A</div>
+            <div>
+              <div class="testi-author-name">Mrs. Adaeze Nwosu</div>
+              <div class="testi-author-role">Smallholder Farmer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              />
+            </svg>
+          </div>
+          <p class="testi-quote">
+            We supply our whole market from Era of Grace. Reliable, fresh, and
+            always on time. I highly recommend them to everyone.
+          </p>
+          <div class="testi-footer">
+            <div class="testi-avatar av-3">E</div>
+            <div>
+              <div class="testi-author-name">Emeka Taiwo</div>
+              <div class="testi-author-role">Market Supplier</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <!-- Left: info -->
+      <div class="contact-left">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="contact-title">Let's Start a<br /><em>Conversation</em></h2>
+        <div class="gold-line"></div>
+        <p class="contact-desc">
+          Have a question, want to place an order, or just want to learn more
+          about the farm? Reach out — we'd love to hear from you.
+        </p>
+
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div>
+              <div class="ci-label">Address</div>
+              <div class="ci-value">Port Harcourt, Rivers State, Nigeria</div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.01z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="ci-label">Phone</div>
+              <div class="ci-value">
+                <a href="tel:+2348000000000">+234 800 000 0000</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <div>
+              <div class="ci-label">Email</div>
+              <div class="ci-value">
+                <a href="mailto:hello@eraofgracefarms.com"
+                  >hello@eraofgracefarms.com</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-icon">
+              <svg
+                viewBox="0 0 24 24"
+                stroke="var(--cream)"
+                fill="none"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                />
+              </svg>
+            </div>
+            <div>
+              <div class="ci-label">WhatsApp</div>
+              <div class="ci-value"><a href="#">+234 800 000 0000</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="contact-right">
+        <h3>Send Us a Message</h3>
+        <p>We typically respond within 24 hours.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="e.g. John" />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="e.g. Doe" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="e.g. john@email.com" />
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="e.g. +234 800 000 0000" />
+        </div>
+
+        <div class="form-group">
+          <label>Subject</label>
+          <select>
+            <option value="" disabled selected>Select a subject</option>
+            <option>Piglet Sales Enquiry</option>
+            <option>Breeding Stock Enquiry</option>
+            <option>Bulk Order</option>
+            <option>Farm Consultation</option>
+            <option>Farm Tour Booking</option>
+            <option>Logistics</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell us what you need..."></textarea>
+        </div>
+
+        <button class="form-submit">Send Message</button>
+      </div>
+    </section>
+
+    <div class="footer-gold-bar"></div>
+
+    <footer>
+      <div class="footer-top">
+        <!-- COL 1: Brand -->
+        <div class="footer-brand">
+            <img src="./Assest/era-of-grace-farms-logo-light.svg" alt="Farms logo" id="light-img">
+          <p class="footer-desc">
+            A family-owned pig farm committed to raising healthy animals
+            naturally and delivering quality to every customer.
+          </p>
+          <div class="footer-socials">
+            <!-- Facebook -->
+            <a href="#" class="social-btn" title="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                />
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a href="#" class="social-btn" title="Instagram">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle
+                  cx="17.5"
+                  cy="6.5"
+                  r="0.5"
+                  fill="rgba(245,240,232,0.7)"
+                  stroke="none"
+                />
+              </svg>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="#" class="social-btn" title="WhatsApp">
+              <svg
+                viewBox="0 0 24 24"
+                stroke="rgba(245,240,232,0.7)"
+                fill="none"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                />
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="#" class="social-btn" title="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- COL 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- COL 3: Services -->
+        <div class="footer-col">
+          <h4>Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="#">Piglet Sales</a></li>
+            <li><a href="#">Breeding Stock</a></li>
+            <li><a href="#">Bulk Orders</a></li>
+            <li><a href="#">Farm Consultation</a></li>
+            <li><a href="#">Farm Tour</a></li>
+            <li><a href="#">Logistics</a></li>
+          </ul>
+        </div>
+
+        <!-- COL 4: Contact -->
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="contact-items">
+            <!-- Address -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-info-label">Address</div>
+                <div class="contact-info-value">
+                  Port Harcourt,<br />Rivers State, Nigeria
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.01z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-info-label">Phone</div>
+                <div class="contact-info-value">
+                  <a href="tel:+2348000000000">+234 800 000 0000</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-info-label">Email</div>
+                <div class="contact-info-value">
+                  <a href="mailto:hello@eraofgracefarms.com"
+                    >hello@eraofgracefarms.com</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  stroke="var(--gold)"
+                  fill="none"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="contact-info-label">WhatsApp</div>
+                <div class="contact-info-value">
+                  <a href="#">+234 800 000 0000</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>© 2025 Era of Grace Farms. All rights reserved.</p>
+        <ul class="footer-bottom-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

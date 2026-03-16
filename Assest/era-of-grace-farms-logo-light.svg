@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+
+  <!-- Transparent background -->
+  <rect width="400" height="100" fill="transparent"/>
+
+  <!-- Main name: Era of Grace Farms — cream color for dark bg -->
+  <text
+    x="200"
+    y="46"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="34"
+    font-weight="bold"
+    font-style="italic"
+    fill="#F5F0E8"
+    text-anchor="middle"
+    letter-spacing="1"
+  >Era of Grace Farms</text>
+
+  <!-- Sub label: PIG FARM — gold color -->
+  <text
+    x="200"
+    y="63"
+    font-family="Arial, sans-serif"
+    font-size="9"
+    font-weight="600"
+    fill="#D4A847"
+    text-anchor="middle"
+    letter-spacing="5"
+  >PIG FARM</text>
+
+  <!-- Gold divider line -->
+  <line x1="60" y1="70" x2="340" y2="70" stroke="#D4A847" stroke-width="1"/>
+
+  <!-- Tagline — muted cream -->
+  <text
+    x="200"
+    y="85"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="9.5"
+    font-style="italic"
+    fill="#D4A847"
+    text-anchor="middle"
+    letter-spacing="0.5"
+    opacity="0.8"
+  >Raised with Care, Sold with Pride</text>
+
+</svg>

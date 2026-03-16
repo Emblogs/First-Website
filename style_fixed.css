@@ -205,7 +205,7 @@ nav a {
 }
 
 .slide-desc {
-  font-size: 0.88rem;
+  font-size: 1.4rem;
   color: rgba(255, 255, 255, 0.78);
   line-height: 1.9;
   max-width: 480px;
@@ -409,7 +409,7 @@ nav a {
 
 /* FIX: was abt-story (dash) in CSS but abt_story (underscore) in HTML */
 .abt_story {
-  font-size: 0.88rem;
+  font-size: 1.3rem;
   color: var(--charcoal);
   line-height: 1.9;
   opacity: 0.85;
@@ -518,7 +518,7 @@ nav a {
 }
 
 .section-subtitle {
-  font-size: 0.82rem;
+  font-size: 1.24rem;
   color: rgba(245, 240, 232, 0.6);
   line-height: 1.8;
   max-width: 500px;
@@ -614,7 +614,7 @@ nav a {
 }
 
 .service-card p {
-  font-size: 0.74rem;
+  font-size: 1.1rem;
   color: rgba(245, 240, 232, 0.65);
   line-height: 1.8;
   flex: 1;
@@ -708,7 +708,7 @@ nav a {
 }
 
 .logistics-text p {
-  font-size: 0.76rem;
+  font-size: 1rem;
   color: rgba(245, 240, 232, 0.6);
   line-height: 1.7;
 }
@@ -755,7 +755,7 @@ nav a {
 }
 
 .opt-label {
-  font-size: 0.62rem;
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -763,7 +763,7 @@ nav a {
 }
 
 .opt-desc {
-  font-size: 0.58rem;
+  font-size: 1rem;
   color: rgba(245, 240, 232, 0.5);
   letter-spacing: 1px;
 }
@@ -775,7 +775,7 @@ nav a {
 }
 
 .services-cta p {
-  font-size: 0.78rem;
+  font-size: 1.2rem;
   color: rgba(245, 240, 232, 0.55);
   margin-bottom: 20px;
   letter-spacing: 1px;
@@ -897,7 +897,7 @@ nav a {
 
 .testi-quote {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-style: italic;
   color: var(--charcoal);
   line-height: 1.8;
@@ -920,7 +920,7 @@ nav a {
   align-items: center;
   justify-content: center;
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--white);
   /* flex-shrink: 0; */
@@ -996,7 +996,7 @@ nav a {
 }
 
 .contact-desc {
-  font-size: 0.84rem;
+  font-size: 1.1rem;
   color: var(--charcoal);
   line-height: 1.9;
   opacity: 0.8;
@@ -1079,7 +1079,7 @@ nav a {
 }
 
 .contact-right p {
-  font-size: 0.76rem;
+  font-size: 1rem;
   color: rgba(245, 240, 232, 0.55);
   line-height: 1.7;
   margin-top: -10px;
@@ -1098,7 +1098,7 @@ nav a {
 }
 
 .form-group label {
-  font-size: 0.58rem;
+  font-size: 0.8rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: rgba(245, 240, 232, 0.5);
@@ -1186,37 +1186,8 @@ footer {
   gap: 20px;
 }
 
-.footer-logo-main {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  font-style: italic;
-  color: var(--cream);
-  letter-spacing: 1px;
-  line-height: 1;
-}
-
-.footer-logo-sub {
-  font-size: 0.52rem;
-  font-weight: 600;
-  color: var(--gold);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  margin-top: 4px;
-  display: block;
-}
-
-.footer-logo-tagline {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 0.82rem;
-  font-style: italic;
-  color: rgba(245, 240, 232, 0.55);
-  margin-top: 2px;
-  display: block;
-}
-
 .footer-desc {
-  font-size: 0.78rem;
+  font-size: 1rem;
   color: rgba(245, 240, 232, 0.55);
   line-height: 1.9;
   max-width: 260px;

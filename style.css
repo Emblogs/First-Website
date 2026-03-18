@@ -248,8 +248,8 @@ nav a {
 .ima {
   position: absolute;
   right: -90px;
-  width: 53%;
-  height: 620px;
+  width: 50vw;
+  height: 100vh;
   object-fit: cover;
   top: -73px;
   opacity: 0;

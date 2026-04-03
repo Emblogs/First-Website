@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup</title>
-    <link rel="stylesheet" href="/Signup.css" />
+    <link rel="stylesheet" href="./Signup.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Josefin+Sans:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -85,57 +85,65 @@
         </p>
       </div>
 
-      <form class="auth-form">
+      <form class="auth-form" onsubmit="handleSignup(event)">
         <div class="form-row">
           <div class="form-group">
             <label>First Name</label>
-            <input type="text" placeholder="e.g. John" />
+            <input type="text" id="fname" placeholder="e.g. John" />
+            <span class="field-error" id="err-fname">Please enter your first name</span>
           </div>
           <div class="form-group">
             <label>Last Name</label>
-            <input type="text" placeholder="e.g. Doe" />
+            <input type="text" id="lname" placeholder="e.g. Doe" />
+            <span class="field-error" id="err-lname">Please enter your last name</span>
           </div>
         </div>
 
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" placeholder="e.g. john@email.com" />
+          <input type="email" id="email" placeholder="e.g. john@email.com" />
+          <span class="field-error" id="err-email">Please enter a valid email</span>
         </div>
 
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="tel" placeholder="e.g. +234 800 000 0000" />
+          <input type="tel" id="phone" placeholder="e.g. +234 800 000 0000" />
+          <span class="field-error" id="err-phone">Please enter your phone number</span>
         </div>
 
         <div class="form-group">
           <label>Physical Address</label>
-          <input type="text" placeholder="e.g. 12 Farm Road, Port Harcourt" />
+          <input type="text" id="address" placeholder="e.g. 12 Farm Road, Port Harcourt" />
+          <span class="field-error" id="err-address">Please enter your address</span>
         </div>
 
         <div class="form-group">
           <label>Password</label>
-          <input type="password" placeholder="Create a strong password" />
+          <input type="password" id="password" placeholder="Create a strong password" oninput="checkStrength(this.value)" />
           <div class="password-strength">
-            <div class="strength-bar active"></div>
-            <div class="strength-bar active"></div>
-            <div class="strength-bar"></div>
-            <div class="strength-bar"></div>
+            <div class="strength-bar" id="bar1"></div>
+            <div class="strength-bar" id="bar2"></div>
+            <div class="strength-bar" id="bar3"></div>
+            <div class="strength-bar" id="bar4"></div>
           </div>
-          <span class="strength-label">Password strength: Fair</span>
+          <span class="strength-label" id="strength-label">Password strength: —</span>
+          <span class="field-error" id="err-password">Password must be at least 6 characters</span>
         </div>
 
         <div class="form-group">
           <label>Confirm Password</label>
-          <input type="password" placeholder="Repeat your password" />
+          <input type="password" id="confirm-password" placeholder="Repeat your password" />
+          <span class="field-error" id="err-confirm">Passwords do not match</span>
         </div>
 
         <div class="form-check">
           <input type="checkbox" id="terms" />
-          <label for="terms"
-            >I agree to the <a href="#">Terms of Service</a> and
-            <a href="#">Privacy Policy</a> of Era of Grace Farms.</label
-          >
+          <label for="terms">I agree to the <a href="#">Terms of Service</a> and
+            <a href="#">Privacy Policy</a> of Era of Grace Farms.</label>
         </div>
+        <span class="field-error" id="err-terms">Please accept the terms to continue</span>
+
+        <span class="field-error" id="err-exists" style="text-align:center;font-size:0.7rem">An account with this email already exists. <a href="login.html" style="color:var(--green)">Log in instead</a></span>
 
         <button type="submit" class="auth-submit">Create Account</button>
 
@@ -146,5 +154,87 @@
         </p>
       </form>
     </div>
-  </body>
+<script>
+  // Password strength checker
+  function checkStrength(val) {
+    const bars = [document.getElementById('bar1'), document.getElementById('bar2'), document.getElementById('bar3'), document.getElementById('bar4')];
+    const label = document.getElementById('strength-label');
+    let score = 0;
+    if (val.length >= 6) score++;
+    if (val.length >= 10) score++;
+    if (/[A-Z]/.test(val) && /[0-9]/.test(val)) score++;
+    if (/[^A-Za-z0-9]/.test(val)) score++;
+
+    const colors = ['#b42828', '#D4A847', '#2A6041', '#1C3D28'];
+    const labels = ['Weak', 'Fair', 'Good', 'Strong'];
+
+    bars.forEach((b, i) => {
+      b.style.background = i < score ? colors[score - 1] : 'rgba(42,96,65,0.1)';
+    });
+
+    label.textContent = val.length === 0 ? 'Password strength: —' : 'Password strength: ' + (labels[score - 1] || 'Weak');
+  }
+
+  // Clear error
+  function clearErr(id) {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  }
+
+  // Show error
+  function showErr(id) {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'block';
+  }
+
+  function handleSignup(e) {
+    e.preventDefault();
+
+    const fname   = document.getElementById('fname').value.trim();
+    const lname   = document.getElementById('lname').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const phone   = document.getElementById('phone').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const password = document.getElementById('password').value;
+    const confirm  = document.getElementById('confirm-password').value;
+    const terms    = document.getElementById('terms').checked;
+
+    // Clear all errors first
+    ['fname','lname','email','phone','address','password','confirm','terms','exists'].forEach(id => clearErr('err-' + id));
+
+    let valid = true;
+
+    if (!fname)   { showErr('err-fname');   valid = false; }
+    if (!lname)   { showErr('err-lname');   valid = false; }
+    if (!email || !email.includes('@')) { showErr('err-email'); valid = false; }
+    if (!phone)   { showErr('err-phone');   valid = false; }
+    if (!address) { showErr('err-address'); valid = false; }
+    if (password.length < 6) { showErr('err-password'); valid = false; }
+    if (password !== confirm) { showErr('err-confirm'); valid = false; }
+    if (!terms) { showErr('err-terms'); valid = false; }
+
+    if (!valid) return;
+
+    // Check if email already exists
+    const existing = JSON.parse(localStorage.getItem('eog_users') || '[]');
+    if (existing.find(u => u.email === email)) {
+      showErr('err-exists');
+      return;
+    }
+
+    // Save new user
+    const user = { fname, lname, email, phone, address, password };
+    existing.push(user);
+    localStorage.setItem('eog_users', JSON.stringify(existing));
+
+    // Save current session
+    const sessionUser = { fname, lname, email, phone, address };
+    sessionStorage.setItem('eog_user', JSON.stringify(sessionUser));
+    localStorage.setItem('eog_user', JSON.stringify(sessionUser));
+
+    // Redirect to dashboard
+    window.location.href = 'services.html';
+  }
+</script>
+</body>
 </html>

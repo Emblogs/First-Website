@@ -391,3 +391,15 @@ body {
 .auth-login-link a:hover {
   border-color: var(--green);
 }
+
+.field-error {
+  font-size: 0.58rem;
+  color: #b42828;
+  margin-top: 2px;
+  display: none;
+  letter-spacing: 0.5px;
+}
+
+.form-group input.error {
+  border-color: #b42828;
+}

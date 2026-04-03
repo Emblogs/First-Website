@@ -44,10 +44,11 @@
         </p>
       </div>
 
-      <form class="auth-form">
+      <form class="auth-form" onsubmit="handleLogin(event)">
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" placeholder="e.g. john@email.com" />
+          <input type="email" id="login-email" placeholder="e.g. john@email.com" />
+          <span class="field-error" id="err-email">Please enter your email</span>
         </div>
 
         <div class="form-group">
@@ -55,8 +56,11 @@
             <label>Password</label>
             <a href="#" class="forgot-link">Forgot password?</a>
           </div>
-          <input type="password" placeholder="Enter your password" />
+          <input type="password" id="login-password" placeholder="Enter your password" />
+          <span class="field-error" id="err-password">Please enter your password</span>
         </div>
+
+        <span class="field-error" id="err-invalid" style="text-align:center;font-size:0.7rem">Incorrect email or password. Please try again.</span>
 
         <div class="form-check">
           <input type="checkbox" id="remember" />
@@ -68,9 +72,63 @@
         <div class="auth-divider"><span>or</span></div>
 
         <p class="auth-signup-link">
-          New here? <a href="signup.html">Create a free account</a>
+          New here? <a href="Signup.html">Create a free account</a>
         </p>
       </form>
     </div>
-  </body>
+<script>
+  function handleLogin(e) {
+    e.preventDefault();
+
+    const email    = document.getElementById('login-email').value.trim();
+    const password = document.getElementById('login-password').value;
+    const remember = document.getElementById('remember').checked;
+
+    // Clear errors
+    ['email','password','invalid'].forEach(id => {
+      const el = document.getElementById('err-' + id);
+      if (el) el.style.display = 'none';
+    });
+
+    let valid = true;
+    if (!email || !email.includes('@')) {
+      document.getElementById('err-email').style.display = 'block';
+      valid = false;
+    }
+    if (!password) {
+      document.getElementById('err-password').style.display = 'block';
+      valid = false;
+    }
+    if (!valid) return;
+
+    // Check against saved users
+    const users = JSON.parse(localStorage.getItem('eog_users') || '[]');
+    const user = users.find(u => u.email === email && u.password === password);
+
+    if (!user) {
+      document.getElementById('err-invalid').style.display = 'block';
+      return;
+    }
+
+    // Save session (without password)
+    const sessionUser = {
+      fname:   user.fname,
+      lname:   user.lname,
+      email:   user.email,
+      phone:   user.phone,
+      address: user.address
+    };
+
+    sessionStorage.setItem('eog_user', JSON.stringify(sessionUser));
+
+    // If remember me is checked — save to localStorage too
+    if (remember) {
+      localStorage.setItem('eog_user', JSON.stringify(sessionUser));
+    }
+
+    // Redirect to dashboard
+    window.location.href = 'services.html';
+  }
+</script>
+</body>
 </html>

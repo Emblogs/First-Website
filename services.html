@@ -1,76 +1,367 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Era of Grace Farms — Dashboard</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Josefin+Sans:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/sevices.css">
-  </head>
-  <body>
-    <div class="side-bar">
-      <div class="logo">
-        <img src="./Assest/era-of-grace-farms-logo-light.svg" alt="Farm logo" />
-      </div>
-      <nav class="sidebar-nav">
-        <span class="nav-label">Main</span>
-        <a class="nav-item active" onclick="showTab('overview')">
-          <svg viewBox="0 0 24 24">
-            <rect x="3" y="3" width="7" height="7" />
-            <rect x="14" y="3" width="7" height="7" />
-            <rect x="3" y="14" width="7" height="7" />
-            <rect x="14" y="14" width="7" height="7" />
-          </svg>
-          Overview
-        </a>
-        <a class="nav-item" onclick="showTab('order')">
-          <svg viewBox="0 0 24 24">
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <path d="M16 10a4 4 0 0 1-8 0" />
-          </svg>
-          Place Order
-        </a>
-        <a class="nav-item" onclick="showTab('orders')">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-            />
-            <polyline points="14 2 14 8 20 8" />
-            <line x1="16" y1="13" x2="8" y2="13" />
-            <line x1="16" y1="17" x2="8" y2="17" />
-          </svg>
-          My Orders
-        </a>
-        <a class="nav-item" onclick="showTab('track')">
-          <svg viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-          Track Order
-        </a>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Era of Grace Farms — Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./services.css">
+</head>
+<body>
 
-        <span class="nav-label">Account</span>
-        <a class="nav-item" onclick="showTab('profile')">
-          <svg viewBox="0 0 24 24">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-            <circle cx="12" cy="7" r="4" />
-          </svg>
-          My Profile
-        </a>
-        <a class="nav-item" href="index.html">
-          <svg viewBox="0 0 24 24">
-            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-            <polyline points="16 17 21 12 16 7" />
-            <line x1="21" y1="12" x2="9" y2="12" />
-          </svg>
-          Log Out
-        </a>
-      </nav>
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="sidebar-logo">
+    <a href="index.html" class="sidebar-logo-main">Era of Grace Farms</a>
+    <span class="sidebar-logo-sub">My Dashboard</span>
+    <span class="sidebar-logo-tagline">Raised with Care, Sold with Pride</span>
+  </div>
+  <nav class="sidebar-nav">
+    <span class="nav-label">Main</span>
+    <a href="javascript:void(0)" class="nav-item active" onclick="showTab('overview')">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Overview
+    </a>
+    <a href="javascript:void(0)" class="nav-item" onclick="showTab('order')">
+      <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Place Order
+    </a>
+    <a href="javascript:void(0)" class="nav-item" onclick="showTab('orders')">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>My Orders
+    </a>
+    <a href="javascript:void(0)" class="nav-item" onclick="showTab('track')">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Track Order
+    </a>
+    <span class="nav-label">Account</span>
+    <a href="javascript:void(0)" class="nav-item" onclick="showTab('profile')">
+      <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Profile
+    </a>
+    <a href="javascript:void(0)" class="nav-item" onclick="logOut()">
+      <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Log Out
+    </a>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="user-info">
+      <div class="user-avatar" id="sidebar-avatar">J</div>
+      <div>
+        <div class="user-name" id="sidebar-name">John Doe</div>
+        <div class="user-email" id="sidebar-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6c060304022c09010d0500420f0301">[email&#160;protected]</a></div>
+      </div>
     </div>
-    <script src="./services.js"></script>
-  </body>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="topbar">
+    <div class="topbar-title" id="topbar-title">Overview</div>
+    <div class="topbar-right">
+      <button class="topbar-btn" onclick="showTab('order')">+ New Order</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- OVERVIEW -->
+    <div id="tab-overview">
+      <div class="welcome-banner">
+        <div>
+          <h2>Welcome back, <em id="welcome-name">John!</em></h2>
+          <p id="welcome-sub">Manage your orders and track deliveries below.</p>
+        </div>
+        <button class="welcome-btn" onclick="showTab('order')">Place New Order</button>
+      </div>
+      <div class="stats-row" style="margin-top:4px">
+        <div class="stat-card"><div class="stat-label">Total Orders</div><div class="stat-value" id="stat-total">0</div><div class="stat-sub">All time</div></div>
+        <div class="stat-card" style="border-left-color:var(--gold)"><div class="stat-label">Active Orders</div><div class="stat-value" id="stat-active">0</div><div class="stat-sub">In progress</div></div>
+        <div class="stat-card"><div class="stat-label">Delivered</div><div class="stat-value" id="stat-delivered">0</div><div class="stat-sub">Completed</div></div>
+        <div class="stat-card" style="border-left-color:var(--brown)"><div class="stat-label">Total Spent</div><div class="stat-value" id="stat-spent">₦0</div><div class="stat-sub">Paid orders</div></div>
+      </div>
+      <div class="section-card">
+        <div class="section-header">
+          <div><h3>Recent Orders</h3><p>Your latest activity</p></div>
+          <a class="td-action" onclick="showTab('orders')">View All</a>
+        </div>
+        <div id="overview-orders-table"></div>
+      </div>
+    </div>
+
+    <!-- PLACE ORDER -->
+    <div id="tab-order" style="display:none">
+      <div class="section-card">
+        <div class="section-header">
+          <div><h3>Place a New Order</h3><p>Follow the steps to complete your order</p></div>
+        </div>
+        <div class="order-steps">
+          <div class="step active" id="step-ind-1"><div class="step-num">1</div><div class="step-label">Service</div></div>
+          <div class="step-line" id="line-1-2"></div>
+          <div class="step pending" id="step-ind-2"><div class="step-num">2</div><div class="step-label">Details</div></div>
+          <div class="step-line" id="line-2-3"></div>
+          <div class="step pending" id="step-ind-3"><div class="step-num">3</div><div class="step-label">Payment</div></div>
+          <div class="step-line" id="line-3-4"></div>
+          <div class="step pending" id="step-ind-4"><div class="step-num">4</div><div class="step-label">Confirm</div></div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="order-step-panel active" id="order-step-1">
+          <div class="services-grid-sm">
+            <div class="service-opt" onclick="selectService(this,'Piglet Sales',8000)">
+              <div class="service-opt-icon"><svg viewBox="0 0 24 24"><path d="M12 2C9 2 6 4 6 7c0 1 .3 2 .8 2.8C5.1 11 4 12.8 4 15c0 2.2 1.8 4 4 4h8c2.2 0 4-1.8 4-4 0-2.2-1.1-4-2.8-5.2C17.7 9 18 8 18 7c0-3-3-5-6-5z"/></svg></div>
+              <div class="service-opt-name">Piglet Sales</div>
+              <div class="service-opt-price">₦8,000 / piglet</div>
+            </div>
+            <div class="service-opt" onclick="selectService(this,'Breeding Stock',25000)">
+              <div class="service-opt-icon"><svg viewBox="0 0 24 24"><path d="M12 22V12"/><path d="M12 12C12 7 7 3 3 5c0 4 3 7 9 7z"/><path d="M12 12c0-5 5-9 9-7 0 4-3 7-9 7z"/></svg></div>
+              <div class="service-opt-name">Breeding Stock</div>
+              <div class="service-opt-price">₦25,000 / pig</div>
+            </div>
+            <div class="service-opt" onclick="selectService(this,'Bulk Order',0)">
+              <div class="service-opt-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
+              <div class="service-opt-name">Bulk Order</div>
+              <div class="service-opt-price">Price on request</div>
+            </div>
+            <div class="service-opt" onclick="selectService(this,'Farm Consultation',5000)">
+              <div class="service-opt-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+              <div class="service-opt-name">Farm Consultation</div>
+              <div class="service-opt-price">₦5,000 / session</div>
+            </div>
+            <div class="service-opt" onclick="selectService(this,'Farm Tour',5000)">
+              <div class="service-opt-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+              <div class="service-opt-name">Farm Tour</div>
+              <div class="service-opt-price">₦5,000 / person</div>
+            </div>
+            <div class="service-opt" onclick="selectService(this,'Logistics',3000)">
+              <div class="service-opt-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+              <div class="service-opt-name">Logistics</div>
+              <div class="service-opt-price">₦3,000 flat rate</div>
+            </div>
+          </div>
+          <div class="step-nav">
+            <div></div>
+            <button class="btn-next" onclick="goOrderStep(2)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="order-step-panel" id="order-step-2">
+          <div class="order-form">
+            <div class="section-title-sm">Order Details — <span id="selected-service-name" style="color:var(--green)"></span></div>
+            <div class="form-row-3">
+              <div class="form-group">
+                <label>Quantity *</label>
+                <input type="number" id="order-qty" placeholder="e.g. 3" min="1" value="1" oninput="updateSummary()">
+                <span class="field-error" id="err-qty">Please enter a quantity</span>
+              </div>
+              <div class="form-group">
+                <label>Preferred Date *</label>
+                <input type="date" id="order-date">
+                <span class="field-error" id="err-date">Please pick a date</span>
+              </div>
+              <div class="form-group">
+                <label>Preferred Time *</label>
+                <input type="time" id="order-time">
+                <span class="field-error" id="err-time">Please pick a time</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Special Notes</label>
+              <textarea id="order-notes" placeholder="Any special requirements..."></textarea>
+            </div>
+            <div class="section-title-sm" style="margin-top:4px">Delivery Method</div>
+            <div class="delivery-toggle">
+              <div class="delivery-opt selected" id="opt-pickup" onclick="selectDelivery('pickup')">
+                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <div class="delivery-opt-label">Physical Pickup</div>
+                <div class="delivery-opt-desc">Come to the farm — Free</div>
+              </div>
+              <div class="delivery-opt" id="opt-delivery" onclick="selectDelivery('delivery')">
+                <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                <div class="delivery-opt-label">Home Delivery</div>
+                <div class="delivery-opt-desc">We come to you — ₦3,000</div>
+              </div>
+            </div>
+            <div class="form-group" id="delivery-address-group" style="display:none">
+              <label>Delivery Address *</label>
+              <input type="text" id="delivery-address" placeholder="e.g. 12 Farm Road, Port Harcourt" oninput="updateSummary()">
+              <span class="field-error" id="err-address">Please enter your delivery address</span>
+            </div>
+          </div>
+          <div class="step-nav">
+            <button class="btn-prev" onclick="goOrderStep(1)">← Back</button>
+            <button class="btn-next" onclick="goOrderStep(3)">Continue →</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Payment -->
+        <div class="order-step-panel" id="order-step-3">
+          <div class="payment-section">
+            <div class="two-col">
+              <div class="order-summary">
+                <div class="order-summary-title">Order Summary</div>
+                <div class="summary-row"><span>Service</span><span id="sum-service">—</span></div>
+                <div class="summary-row"><span>Quantity</span><span id="sum-qty">—</span></div>
+                <div class="summary-row"><span>Unit Price</span><span id="sum-unit">—</span></div>
+                <div class="summary-row"><span>Subtotal</span><span id="sum-subtotal">—</span></div>
+                <div class="summary-row"><span>Delivery Fee</span><span id="sum-delivery">₦0</span></div>
+                <div class="summary-row total"><span>Total</span><span id="sum-total">—</span></div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:14px">
+                <div>
+                  <div class="payment-method-title">Select Payment Method</div>
+                  <div class="payment-opts">
+                    <div class="payment-opt selected" id="pay-card" onclick="selectPayment('card')">
+                      <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                      <div class="payment-opt-label">Card</div>
+                    </div>
+                    <div class="payment-opt" id="pay-transfer" onclick="selectPayment('transfer')">
+                      <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                      <div class="payment-opt-label">Transfer</div>
+                    </div>
+                    <div class="payment-opt" id="pay-cash" onclick="selectPayment('cash')">
+                      <svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                      <div class="payment-opt-label">Cash</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card via Paystack -->
+                <div id="card-fields" style="display:flex;flex-direction:column;gap:10px">
+                  <div class="status-banner">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    <span>Card payments are securely processed by <strong>Paystack</strong>. You'll be redirected to complete payment.</span>
+                  </div>
+                  <div class="form-group">
+                    <label>Email for Receipt *</label>
+                    <input type="email" id="pay-email" placeholder="e.g. john@email.com">
+                    <span class="field-error" id="err-pay-email">Please enter your email</span>
+                  </div>
+                </div>
+
+                <!-- Transfer -->
+                <div id="transfer-fields" style="display:none;flex-direction:column;gap:10px">
+                  <div class="card-details">
+                    <p style="font-size:0.76rem;color:var(--brown);line-height:1.7">Transfer to:<br><strong style="color:var(--green-dark)">Era of Grace Farms</strong><br>Bank: First Bank Nigeria<br>Account No: <strong>1234567890</strong><br><br>Upload your transfer receipt below to confirm.</p>
+                  </div>
+                  <div class="form-group">
+                    <label>Upload Transfer Receipt *</label>
+                    <input type="file" id="transfer-proof" accept="image/*">
+                    <span class="field-error" id="err-transfer">Please upload your transfer receipt</span>
+                  </div>
+                </div>
+
+                <!-- Cash -->
+                <div id="cash-fields" style="display:none">
+                  <div class="card-details">
+                    <p style="font-size:0.76rem;color:var(--brown);line-height:1.7">You selected <strong>Cash on Delivery/Pickup</strong>.<br><br>Payment will be collected when your order arrives or when you visit the farm. No action needed now.</p>
+                  </div>
+                </div>
+
+                <button class="pay-btn" id="pay-btn" onclick="handlePayment()">
+                  <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                  <span id="pay-btn-text">Pay Now</span>
+                </button>
+                <div class="secure-note">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  Secured & encrypted · Powered by Paystack
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step-nav">
+            <button class="btn-prev" onclick="goOrderStep(2)">← Back</button>
+            <div></div>
+          </div>
+        </div>
+
+        <!-- Step 4: Success -->
+        <div class="order-step-panel" id="order-step-4">
+          <div class="success-state">
+            <div class="success-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <h3>Order Placed Successfully! 🎉</h3>
+            <p id="success-message">Your order has been received and is being processed.</p>
+            <div style="display:flex;gap:12px;margin-top:8px">
+              <button class="btn-next" onclick="showTab('track')">Track Order →</button>
+              <button class="btn-prev" onclick="resetOrder()">Place Another</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MY ORDERS -->
+    <div id="tab-orders" style="display:none">
+      <div class="section-card">
+        <div class="section-header">
+          <div><h3>My Orders</h3><p>All your orders and their current status</p></div>
+        </div>
+        <div id="orders-table-container"></div>
+      </div>
+    </div>
+
+    <!-- TRACK ORDER -->
+    <div id="tab-track" style="display:none">
+      <div class="section-card">
+        <div class="section-header">
+          <div><h3>Track Order</h3><p>Select an order to view its live progress</p></div>
+        </div>
+        <div id="track-content"></div>
+      </div>
+    </div>
+
+    <!-- PROFILE -->
+    <div id="tab-profile" style="display:none">
+      <div class="section-card">
+        <div class="section-header"><div><h3>My Profile</h3><p>Manage your account details</p></div></div>
+        <div class="order-form">
+          <div class="section-title-sm">Personal Information</div>
+          <div class="form-row-2">
+            <div class="form-group"><label>First Name</label><input type="text" id="profile-fname"></div>
+            <div class="form-group"><label>Last Name</label><input type="text" id="profile-lname"></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" id="profile-email"></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" id="profile-phone"></div>
+          <div class="form-group"><label>Physical Address</label><input type="text" id="profile-address"></div>
+
+          <div class="section-title-sm" style="margin-top:8px">Change Password <span style="font-size:0.65rem;color:var(--brown);font-family:'Josefin Sans',sans-serif;font-weight:400">(leave blank to keep current)</span></div>
+
+          <div class="form-group">
+            <label>Old Password *</label>
+            <input type="password" id="profile-old-password" placeholder="Enter your current password">
+            <span id="err-old-pass" style="font-size:0.58rem;color:#b42828;display:none">Please enter your old password</span>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label>New Password *</label>
+              <input type="password" id="profile-new-password" placeholder="Min 6 characters">
+              <span id="err-new-pass" style="font-size:0.58rem;color:#b42828;display:none">New password must be at least 6 characters</span>
+            </div>
+            <div class="form-group">
+              <label>Confirm New Password *</label>
+              <input type="password" id="profile-confirm-password" placeholder="Repeat new password">
+              <span id="err-conf-pass" style="font-size:0.58rem;color:#b42828;display:none">Passwords do not match</span>
+            </div>
+          </div>
+          <button class="save-btn" onclick="saveProfile()">Save Changes</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- DELETE MODAL -->
+<div class="modal-overlay" id="delete-modal">
+  <div class="modal">
+    <h3>Remove Order?</h3>
+    <p>Are you sure you want to remove this order from your list? This cannot be undone.</p>
+    <div class="modal-btns">
+      <button class="modal-cancel" onclick="closeModal()">Cancel</button>
+      <button class="modal-confirm" id="modal-confirm-btn">Remove</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="./services.js"></script>
+</body>
 </html>

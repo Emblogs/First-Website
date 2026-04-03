@@ -624,7 +624,7 @@ function renderTrackForOrder(id) {
           <div class="track-order-card">
             <div class="track-order-id" style="font-size:0.85rem;margin-bottom:8px">Need Help?</div>
             <p style="font-size:0.72rem;color:var(--brown);line-height:1.7;margin-bottom:12px">Having an issue with your order? Contact us directly.</p>
-            <a href="index.html#contact"><button class="topbar-btn" style="width:100%;padding:10px;font-size:0.6rem">Contact Support</button></a>
+            <a href="index.html#contact"><button class ="track-order-btn" style="width:100%;padding:10px;font-size:0.6rem">Contact Support</button></a>
           </div>
         </div>
       </div>`;
